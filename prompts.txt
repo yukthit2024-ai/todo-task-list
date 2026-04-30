@@ -30,6 +30,7 @@ more prompts
 -----------
 In the master list add a '+' button at bottom right to add a master list.  This will be a name, followd by adding items o the master list.
 in the master list, only show a list of master TODO.  no need to show child items
+main screen should show master TODO list only,  Clicking on it, should open a new page with all child entries.
 
 --------------------------------------------------------------------------------------------
 output
