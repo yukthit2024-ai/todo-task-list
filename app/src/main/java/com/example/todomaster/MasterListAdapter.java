@@ -33,7 +33,6 @@ public class MasterListAdapter extends RecyclerView.Adapter<MasterListAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TodoList list = lists.get(position);
         holder.textName.setText(list.name);
-        holder.textCount.setText(list.items.size() + " items");
         holder.itemView.setOnClickListener(v -> listener.onListClick(list));
     }
 
@@ -43,11 +42,10 @@ public class MasterListAdapter extends RecyclerView.Adapter<MasterListAdapter.Vi
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textName, textCount;
+        TextView textName;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textName = itemView.findViewById(R.id.textListName);
-            textCount = itemView.findViewById(R.id.textItemCount);
         }
     }
 }

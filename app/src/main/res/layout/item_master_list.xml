@@ -20,13 +20,5 @@
             android:text="List Name"
             android:textAppearance="?attr/textAppearanceHeadline6" />
 
-        <TextView
-            android:id="@+id/textItemCount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="0 items"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:textColor="?android:attr/textColorSecondary" />
-
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -29,6 +29,7 @@ Give it as a single prompt to give to an agent to achieve this
 more prompts
 -----------
 In the master list add a '+' button at bottom right to add a master list.  This will be a name, followd by adding items o the master list.
+in the master list, only show a list of master TODO.  no need to show child items
 
 --------------------------------------------------------------------------------------------
 output
