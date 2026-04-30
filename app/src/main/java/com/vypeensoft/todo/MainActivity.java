@@ -44,8 +44,12 @@ public class MainActivity extends AppCompatActivity {
             else if (id == R.id.nav_settings) fragment = new SettingsFragment();
             else if (id == R.id.nav_matrix) fragment = new MatrixFragment();
             else if (id == R.id.nav_groups) fragment = new GroupsFragment();
-            else if (id == R.id.nav_help) fragment = new HelpFragment();
-            else if (id == R.id.nav_about) fragment = new AboutFragment();
+            else if (id == R.id.nav_help) {
+                startActivity(new Intent(MainActivity.this, HelpActivity.class));
+            }
+            else if (id == R.id.nav_about) {
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
+            }
             if (fragment != null) getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
             drawer.closeDrawer(GravityCompat.START);
             return true;

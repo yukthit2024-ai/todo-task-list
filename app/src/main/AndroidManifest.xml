@@ -11,5 +11,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AboutActivity" android:label="About" android:theme="@style/Theme.TodoMaster.NoActionBar" />
+        <activity android:name=".HelpActivity" android:label="Help" android:theme="@style/Theme.TodoMaster.NoActionBar" />
     </application>
 </manifest>
