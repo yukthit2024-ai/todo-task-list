@@ -32,7 +32,11 @@ In the master list add a '+' button at bottom right to add a master list.  This 
 in the master list, only show a list of master TODO.  no need to show child items
 main screen should show master TODO list only,  Clicking on it, should open a new page with all child entries.
 all master lists should be saved in file system at /sdcard/Vypeensoft/TODO_Task_LIst/master_lists/
+each master list on main screen to be saved under their own json file under /sdcard/Vypeensoft/TODO_Task_LIst/master_lists/
 
+This path /sdcard/Vypeensoft/TODO_Task_LIst/master_lists/ should be configurable via the settings page.  All settings to be saved under all master lists should be saved in file system at /sdcard/Vypeensoft/TODO_Task_LIst/settings/settings.json
+On startup, app should if folder /sdcard/Vypeensoft/TODO_Task_LIst/master_lists/ doesnt exist, then create it.  Infact, the folder to be checked and created is from the settings
+On startup, app should read the master jsons from /sdcard/Vypeensoft/TODO_Task_LIst/master_lists/*.json and display on the main screen...
 --------------------------------------------------------------------------------------------
 output
 

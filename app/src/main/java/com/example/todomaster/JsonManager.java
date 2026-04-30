@@ -10,11 +10,11 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class JsonManager {
-    private static final String BASE_PATH = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Vypeensoft/TODO_Task_LIst/master_lists/";
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public static File getDirectory() {
-        File dir = new File(BASE_PATH);
+        String basePath = AppSettings.load().masterListPath;
+        File dir = new File(basePath);
         if (!dir.exists()) dir.mkdirs();
         return dir;
     }
