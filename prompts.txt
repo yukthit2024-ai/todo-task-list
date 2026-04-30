@@ -23,5 +23,250 @@ include gradle properties and gradle wrapper dependencies in the project
 
 
 Give it as a single prompt to give to an agent to achieve this
+
+
+
+more prompts
+-----------
+In the master list add a '+' button at bottom right to add a master list.  This will be a name, followd by adding items o the master list.
+
 --------------------------------------------------------------------------------------------
 output
+
+
+Here’s a clean, **single comprehensive prompt** you can give to an autonomous coding agent to build your Android app exactly as specified:
+
+---
+
+**PROMPT FOR AGENT**
+
+Create a complete Android application in **Java (NOT Kotlin)** with the following requirements and architecture.
+
+---
+
+## 1. Core App Concept
+
+Build a **TO-DO Master List Manager** where:
+
+* A **TO-DO Master** is a collection of multiple TO-DO lists.
+* Each **TO-DO list (master item)** contains multiple individual TO-DO items.
+
+---
+
+## 2. Data Model
+
+* Represent the TO-DO master as an **XML file**.
+
+* XML structure should be hierarchical:
+
+  ```xml
+  <todo_master>
+      <todo_list name="Groceries">
+          <item>Milk</item>
+          <item>Bread</item>
+      </todo_list>
+  </todo_master>
+  ```
+
+* The XML file must:
+
+  * Be saved locally
+  * Path must be **user-configurable via Settings page**
+  * Default location: app-specific storage directory
+
+---
+
+## 3. UI Requirements
+
+### Main Screen
+
+* Displays list of **TO-DO Master items (lists)**
+* Clicking a list opens its items
+* Options to:
+
+  * Add/Edit/Delete lists
+  * Add/Edit/Delete items inside list
+  * Share TO-DO master
+
+---
+
+## 4. Navigation (Left Drawer Menu)
+
+Implement a **left-side navigation drawer**:
+
+* Covers full height (top to bottom)
+* Must NOT overlap the top app bar (Toolbar remains visible)
+* Use standard Android DrawerLayout
+
+### Menu Items:
+
+1. Main (TO-DO screen)
+2. Settings
+3. Matrix Credentials
+4. Groups / Rooms
+5. Help
+6. About
+
+Each page must:
+
+* Have a **top app bar with back arrow**
+* Back arrow returns to main screen
+
+---
+
+## 5. Settings Page
+
+* Configure:
+
+  * File storage directory (path input or picker)
+* Persist using SharedPreferences
+
+---
+
+## 6. Matrix Credentials Page
+
+Fields:
+
+* Home Server
+* User ID
+* Password
+
+Requirements:
+
+* Store securely (SharedPreferences for now)
+* Editable form
+* Save button
+
+---
+
+## 7. Groups / Rooms Page
+
+* Editable list of:
+
+  * Group Name
+  * Room ID
+* Features:
+
+  * Add new pair
+  * Edit existing
+  * Delete
+* Persist locally (SharedPreferences or SQLite)
+
+---
+
+## 8. Share Functionality
+
+When user clicks **Share**:
+
+1. Show dialog listing **Groups/Rooms**
+2. User selects one
+3. Convert TO-DO master XML → JSON
+4. Send JSON via **Matrix protocol message** using stored credentials
+
+---
+
+## 9. Matrix Integration
+
+Implement basic Matrix client functionality:
+
+* Login using:
+
+  * Home server
+  * User ID
+  * Password
+* Send message to a room:
+
+  * Room ID from Groups list
+  * Payload = JSON of TO-DO master
+
+Use REST APIs of Matrix (no heavy SDK required unless necessary).
+
+---
+
+## 10. Import Feature
+
+* Listen for incoming Matrix messages (polling or simple sync)
+* When a TO-DO JSON is received:
+
+  * Show prompt:
+
+    * Accept
+    * Reject
+* If accepted:
+
+  * Convert JSON → XML
+  * Save as TO-DO master file (overwrite or new file)
+
+---
+
+## 11. Architecture
+
+* Language: **Java**
+* Use:
+
+  * MVVM or simple MVC
+  * RecyclerView for lists
+  * Fragments for screens
+* Networking:
+
+  * Retrofit or HttpURLConnection
+* XML parsing:
+
+  * DOM or SAX parser
+
+---
+
+## 12. Project Setup
+
+* Use **latest Gradle version compatible with GitHub Actions**
+* Include:
+
+  * `gradle-wrapper.properties`
+  * `gradlew`, `gradlew.bat`
+  * `gradle.properties`
+* Ensure project builds via CLI:
+
+  ```
+  ./gradlew build
+  ```
+
+---
+
+## 13. UI/UX Notes
+
+* Clean Material Design
+* Responsive layouts
+* Toasts or dialogs for feedback
+* Confirmation dialogs for destructive actions
+
+---
+
+## 14. Deliverables
+
+Provide:
+
+1. Full Android project structure
+2. All Java source files
+3. XML layouts
+4. Gradle configs
+5. README with:
+
+   * Build instructions
+   * Matrix setup notes
+
+---
+
+## 15. Constraints
+
+* Must be **pure Java (no Kotlin)**
+* Must be **fully runnable project**
+* Avoid unnecessary libraries
+* Code should be clean and modular
+
+---
+
+Build the complete working application satisfying all above requirements.
+
+---
+
+If you want, I can also generate a **starter project structure + key classes** to speed this up.
