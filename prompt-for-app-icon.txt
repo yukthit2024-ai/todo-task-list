@@ -1,0 +1,4 @@
+at https://magichour.ai/tools/ai-icon-generator
+
+draw me an app icon in PNG format, which shows a Task List with checkboxes. The background color should be while Color.  It should have the text "Tasks" written at the bottom.
+All lines and text to be in bold and Green color.    Fill the icon the entire png
