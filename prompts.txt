@@ -43,7 +43,7 @@ on the sub list, have a checkbox at the end of the line to mark it as complete. 
 on app start,master list on screen is empty. When user goes to settings and save the folder path, then it is able to pickup the master TODO and populate the screen
 
 Modify AboutActivity.java and related source code in this project according to code taken from X:\Projects_X\0_Active\8_Android_APK\Randomizer_APK_GITHUB\app\src\main\java\com\vypeensoft\randomizer\AboutActivity.java
-
+Along with completion checkbox, also provide a delete icon (dustbin) for each item. This should delete the record from the underlying json file
 --------------------------------------------------------------------------------------------
 output
 

@@ -3,6 +3,8 @@ package com.vypeensoft.todo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,6 +46,15 @@ public class TodoItemAdapter extends RecyclerView.Adapter<TodoItemAdapter.ViewHo
             updateStrikeThrough(holder.textName, isChecked);
             if (listener != null) listener.onItemChanged();
         });
+
+        holder.btnDelete.setOnClickListener(v -> {
+            int currentPosition = holder.getAdapterPosition();
+            if (currentPosition != RecyclerView.NO_POSITION) {
+                items.remove(currentPosition);
+                notifyItemRemoved(currentPosition);
+                if (listener != null) listener.onItemChanged();
+            }
+        });
     }
 
     private void updateStrikeThrough(TextView textView, boolean isCompleted) {
@@ -63,11 +74,13 @@ public class TodoItemAdapter extends RecyclerView.Adapter<TodoItemAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textName;
-        android.widget.CheckBox checkCompleted;
+        CheckBox checkCompleted;
+        ImageButton btnDelete;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textName = itemView.findViewById(R.id.textItemName);
             checkCompleted = itemView.findViewById(R.id.checkCompleted);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
         }
     }
 }
