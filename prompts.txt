@@ -45,6 +45,8 @@ on app start,master list on screen is empty. When user goes to settings and save
 Modify AboutActivity.java and related source code in this project according to code taken from X:\Projects_X\0_Active\8_Android_APK\Randomizer_APK_GITHUB\app\src\main\java\com\vypeensoft\randomizer\AboutActivity.java
 Along with completion checkbox, also provide a delete icon (dustbin) for each item. This should delete the record from the underlying json file
 on clicking  + add button, when popup appears, set focus to text field and show the keyboard. This should be behaviour for both popups.
+
+The icon supplied by me is round.  but the icon in the app is square with rounded edge. Please keep it round only, with white background outside the circle
 --------------------------------------------------------------------------------------------
 output
 
