@@ -36,6 +36,10 @@ public class JsonManager {
                 }
             }
         }
+        
+        // Sort lists alphabetically by name
+        java.util.Collections.sort(master.lists, (l1, l2) -> l1.name.compareToIgnoreCase(l2.name));
+        
         return master;
     }
 

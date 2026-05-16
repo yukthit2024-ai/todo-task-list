@@ -47,6 +47,10 @@ Along with completion checkbox, also provide a delete icon (dustbin) for each it
 on clicking  + add button, when popup appears, set focus to text field and show the keyboard. This should be behaviour for both popups.
 
 The icon supplied by me is round.  but the icon in the app is square with rounded edge. Please keep it round only, with white background outside the circle
+Show master list in alphbetical order
+
+
+
 --------------------------------------------------------------------------------------------
 output
 

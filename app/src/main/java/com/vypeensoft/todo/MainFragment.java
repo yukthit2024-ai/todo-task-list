@@ -87,8 +87,11 @@ public class MainFragment extends Fragment {
                 TodoList newList = new TodoList(name);
                 todoMaster.lists.add(newList);
                 JsonManager.saveList(newList);
-                int index = todoMaster.lists.size() - 1;
-                adapter.notifyItemInserted(index);
+                
+                // Keep the list sorted
+                java.util.Collections.sort(todoMaster.lists, (l1, l2) -> l1.name.compareToIgnoreCase(l2.name));
+                adapter.notifyDataSetChanged();
+                
                 Toast.makeText(requireContext(), "Master list created", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(requireContext(), "Name cannot be empty", Toast.LENGTH_SHORT).show();
